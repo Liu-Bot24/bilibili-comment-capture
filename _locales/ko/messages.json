@@ -1,0 +1,18 @@
+{
+  "extensionName": {
+    "message": "Bilibili Comment Helper - 댓글 캡처, 복사, 내보내기, 검색",
+    "description": "Chrome 웹 스토어 제목과 확장 프로그램 이름."
+  },
+  "extensionShortName": {
+    "message": "Bili댓글",
+    "description": "짧은 확장 프로그램 이름."
+  },
+  "extensionDescription": {
+    "message": "Bilibili 동영상 댓글을 캡처, 검색, 복사하고 JSON 또는 Markdown으로 내보내며 AI 분석을 바로 열 수 있습니다.",
+    "description": "짧은 확장 프로그램 설명."
+  },
+  "actionTitle": {
+    "message": "Bilibili Comment Export Helper",
+    "description": "브라우저 작업 버튼 툴팁."
+  }
+}

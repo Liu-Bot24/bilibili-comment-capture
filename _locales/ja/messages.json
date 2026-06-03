@@ -1,0 +1,18 @@
+{
+  "extensionName": {
+    "message": "Bilibili Comment Helper - コメント取得・コピー・保存・検索",
+    "description": "Chrome ウェブストアのタイトルと拡張機能名。"
+  },
+  "extensionShortName": {
+    "message": "Biliコメント",
+    "description": "短い拡張機能名。"
+  },
+  "extensionDescription": {
+    "message": "Bilibili動画のコメントを取得、検索、コピーし、JSONまたはMarkdownで保存してAI分析を開けます。",
+    "description": "拡張機能の短い説明。"
+  },
+  "actionTitle": {
+    "message": "Bilibili Comment Export Helper",
+    "description": "ブラウザアクションのツールチップ。"
+  }
+}

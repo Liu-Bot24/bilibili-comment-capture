@@ -1,0 +1,20 @@
+{
+  "name": "bilibili-comment-capture",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "pack": "npm run pack:store",
+    "pack:release": "node scripts/pack-release.mjs",
+    "pack:store": "node scripts/pack-store.mjs",
+    "test": "node --test",
+    "verify": "npm test && npm run build"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0"
+  },
+  "dependencies": {
+    "js-md5": "^0.8.3"
+  }
+}

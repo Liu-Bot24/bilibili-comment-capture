@@ -1,0 +1,11 @@
+node_modules/
+dist/
+releases/
+chrome-web-store/
+.package/
+coverage/
+.DS_Store
+DEVELOPMENT_LOG.md
+docs/superpowers/
+*.log
+*.zip

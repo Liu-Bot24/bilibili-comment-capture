@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>B站评论导出助手</title>
+    <link rel="stylesheet" href="sidepanel.css">
+  </head>
+  <body>
+    <main class="panel-shell">
+      <header class="app-header">
+        <img class="brand-mark" src="../icons/icon48.png" alt="" width="28" height="28">
+        <h1 data-i18n="app.title">B站评论导出助手</h1>
+        <div class="language-switch" role="group" aria-label="界面语言" data-i18n-aria="nav.language">
+          <button type="button" data-locale-option="en">EN</button>
+          <button class="is-active" type="button" data-locale-option="zh">中文</button>
+        </div>
+      </header>
+
+      <section class="video-action-strip">
+        <section class="video-strip" id="active-video-card" aria-live="polite">
+          <div class="video-copy">
+            <strong id="active-video-title">读取当前标签页</strong>
+            <span id="active-video-meta">等待页面信息</span>
+          </div>
+          <button class="icon-button" id="refresh-active-video" type="button" aria-label="重新识别当前标签页" title="重新识别" data-i18n-aria="action.refreshActiveVideo" data-i18n-title="action.refresh">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"></path><path d="M21 3v6h-6"></path></svg>
+          </button>
+        </section>
+        <button class="ai-analysis-button" id="open-ai-analysis" type="button" disabled data-i18n="action.aiAnalysis">AI分析</button>
+      </section>
+
+      <nav class="view-switch" aria-label="功能切换" data-i18n-aria="nav.views">
+        <button class="view-button is-active" type="button" data-view-target="capture" data-i18n="tab.capture">抓取评论</button>
+        <button class="view-button" type="button" data-view-target="comments" disabled data-i18n="tab.results">查看结果</button>
+      </nav>
+
+      <section class="view-panel is-active" id="view-capture" data-view-panel="capture">
+        <div class="section-title-row">
+          <div>
+            <h2 data-i18n="capture.title">抓取条件</h2>
+            <p data-i18n="capture.scope">评论抓取</p>
+          </div>
+          <span id="capture-summary">前 20 轮 · 保留 100 条</span>
+        </div>
+
+        <section class="option-panel root-comment-options">
+          <div class="option-group-header">
+            <h3 data-i18n="capture.root">主评论</h3>
+            <fieldset class="inline-choice" aria-label="主评论排序" data-i18n-aria="capture.rootOrder">
+              <label><input type="radio" name="root-order" value="default" checked><span data-i18n="order.default">默认顺序</span></label>
+              <label><input type="radio" name="root-order" value="latest"><span data-i18n="order.latest">最新</span></label>
+            </fieldset>
+          </div>
+          <div class="capture-limit-grid">
+            <label class="field">
+              <span data-i18n="capture.rootLoadRounds">最多加载轮数</span>
+              <input id="root-loads" type="number" min="1" max="5000" value="20">
+            </label>
+            <label class="field">
+              <span data-i18n="capture.rootKeepCount">最多保留条数</span>
+              <input id="root-items" type="number" min="1" max="1000000" value="100">
+            </label>
+            <label class="check-row">
+              <input id="root-loads-all" type="checkbox">
+              <span data-i18n="capture.noRoundLimit">不限制轮数</span>
+            </label>
+            <label class="check-row">
+              <input id="root-items-all" type="checkbox">
+              <span data-i18n="capture.noItemLimit">不限制条数</span>
+            </label>
+          </div>
+        </section>
+
+        <section class="option-panel reply-comment-options" aria-disabled="false">
+          <div class="option-group-header">
+            <h3 data-i18n="capture.replies">楼中楼</h3>
+            <label class="section-enable-toggle">
+              <input id="include-replies" type="checkbox" checked>
+              <span data-i18n="capture.includeReplies">启用抓取</span>
+            </label>
+          </div>
+          <fieldset class="inline-choice two" aria-label="楼中楼排序" data-i18n-aria="capture.replyOrder">
+            <label><input type="radio" name="reply-order" value="default" checked><span data-i18n="order.default">默认顺序</span></label>
+            <label><input type="radio" name="reply-order" value="latest"><span data-i18n="order.timeDesc">时间倒序</span></label>
+          </fieldset>
+          <div class="capture-limit-grid">
+            <label class="field">
+              <span data-i18n="capture.replyExpandRounds">最多展开页数</span>
+              <input id="reply-loads" type="number" min="1" max="500" value="1">
+            </label>
+            <label class="field">
+              <span data-i18n="capture.replyKeepCount">最多保留回复数</span>
+              <input id="reply-items" type="number" min="0" max="100000" value="5">
+            </label>
+            <label class="check-row">
+              <input id="reply-loads-all" type="checkbox">
+              <span data-i18n="capture.noPageLimit">不限制页数</span>
+            </label>
+            <label class="check-row">
+              <input id="reply-items-all" type="checkbox">
+              <span data-i18n="capture.noReplyLimit">不限制回复数</span>
+            </label>
+          </div>
+        </section>
+
+        <section class="capture-runner">
+          <div class="task-row">
+            <button class="primary-button" id="start-capture" type="button" disabled data-i18n="action.startCapture">开始抓取评论</button>
+            <button class="secondary-button danger" id="cancel-capture" type="button" disabled data-i18n="action.stop">停止</button>
+          </div>
+          <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <span id="progress-bar"></span>
+          </div>
+          <p class="progress-text" id="progress-text" data-i18n="progress.waiting">等待任务</p>
+          <p class="error-text" id="error-text" hidden></p>
+        </section>
+      </section>
+
+      <section class="view-panel" id="view-comments" data-view-panel="comments" hidden>
+        <div class="section-title-row">
+          <div>
+            <h2 data-i18n="results.title">查看结果</h2>
+            <p data-i18n="results.scope">本次结果</p>
+          </div>
+          <span id="result-stats" data-i18n="results.notCaptured">尚未抓取</span>
+        </div>
+        <section class="result-source" aria-live="polite">
+          <strong id="result-title" data-i18n="results.emptyTitle">暂无结果</strong>
+          <span id="result-meta" data-i18n="results.emptyMeta">抓取完成后会显示本次结果来源</span>
+        </section>
+        <div class="comment-actions">
+          <span id="comments-feedback" aria-live="polite"></span>
+          <button class="secondary-button" id="copy-all-comments" type="button" disabled data-i18n="action.copyAll">复制全部</button>
+          <button class="secondary-button" id="export-markdown" type="button" disabled data-i18n="action.exportMarkdown">导出 Markdown</button>
+          <button class="primary-button" id="export-json" type="button" disabled data-i18n="action.exportJson">导出 JSON</button>
+        </div>
+        <label class="comment-search" for="comment-search">
+          <input id="comment-search" type="search" placeholder="搜索评论" aria-label="搜索评论" autocomplete="off" spellcheck="false" disabled data-i18n-placeholder="search.comments" data-i18n-aria="search.comments">
+        </label>
+        <div class="comment-thread-list" id="comment-list">
+          <p class="empty-state" data-i18n="results.emptyList">抓取完成后，评论会在这里以紧凑文本显示。</p>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="sidepanel.js"></script>
+  </body>
+</html>

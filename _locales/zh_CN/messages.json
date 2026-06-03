@@ -1,0 +1,18 @@
+{
+  "extensionName": {
+    "message": "B站评论导出助手 - 抓取、复制、导出和搜索评论",
+    "description": "Chrome 应用商店标题和扩展名称。"
+  },
+  "extensionShortName": {
+    "message": "B站评论导出助手",
+    "description": "短扩展名称。"
+  },
+  "extensionDescription": {
+    "message": "在 B 站视频页抓取、搜索、复制并导出评论，支持 JSON、Markdown 和一键 AI 分析。",
+    "description": "扩展短描述。"
+  },
+  "actionTitle": {
+    "message": "B站评论导出助手",
+    "description": "浏览器按钮提示。"
+  }
+}

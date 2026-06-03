@@ -1,0 +1,18 @@
+{
+  "extensionName": {
+    "message": "Bilibili Comment Helper - เก็บ คัดลอก ส่งออก และค้นหา",
+    "description": "ชื่อส่วนขยายและชื่อใน Chrome Web Store"
+  },
+  "extensionShortName": {
+    "message": "BiliComment",
+    "description": "ชื่อส่วนขยายแบบสั้น"
+  },
+  "extensionDescription": {
+    "message": "เก็บ ค้นหา คัดลอก และส่งออกคอมเมนต์วิดีโอ Bilibili เป็น JSON หรือ Markdown พร้อมเปิดการวิเคราะห์ AI ได้ในคลิกเดียว",
+    "description": "คำอธิบายส่วนขยายแบบสั้น"
+  },
+  "actionTitle": {
+    "message": "Bilibili Comment Export Helper",
+    "description": "ข้อความกำกับปุ่มส่วนขยาย"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "extensionName": {
+    "message": "Bilibili 評論匯出助手 - 擷取、複製、匯出與搜尋評論",
+    "description": "Chrome 線上應用程式商店標題與擴充功能名稱。"
+  },
+  "extensionShortName": {
+    "message": "B站評論助手",
+    "description": "短擴充功能名稱。"
+  },
+  "extensionDescription": {
+    "message": "在 Bilibili 影片頁擷取、搜尋、複製並匯出評論，支援 JSON、Markdown 與一鍵 AI 分析。",
+    "description": "擴充功能短描述。"
+  },
+  "actionTitle": {
+    "message": "Bilibili 評論匯出助手",
+    "description": "瀏覽器按鈕提示。"
+  }
+}

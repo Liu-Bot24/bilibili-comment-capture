@@ -1,0 +1,18 @@
+{
+  "extensionName": {
+    "message": "Bilibili Comment Helper - Capture, Copy, Export & Search",
+    "description": "Chrome Web Store title and extension name."
+  },
+  "extensionShortName": {
+    "message": "BiliComment",
+    "description": "Short extension name."
+  },
+  "extensionDescription": {
+    "message": "Capture, search, copy, and export Bilibili video comments as JSON or Markdown, with one-click AI analysis.",
+    "description": "Short extension description."
+  },
+  "actionTitle": {
+    "message": "Bilibili Comment Export Helper",
+    "description": "Browser action tooltip."
+  }
+}

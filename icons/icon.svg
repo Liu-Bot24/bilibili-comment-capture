@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="B站评论导出助手图标">
+  <defs>
+    <linearGradient id="bg" x1="20" x2="108" y1="18" y2="112" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00A1D6"/>
+      <stop offset="1" stop-color="#33C4A5"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#bg)"/>
+  <path d="M31 33h66a14 14 0 0 1 14 14v35a14 14 0 0 1-14 14H70l-19 15a4 4 0 0 1-7-3V96H31a14 14 0 0 1-14-14V47a14 14 0 0 1 14-14Z" fill="#fff" opacity=".96"/>
+  <rect x="39" y="55" width="50" height="7" rx="3.5" fill="#17202A"/>
+  <rect x="39" y="72" width="34" height="7" rx="3.5" fill="#17202A" opacity=".74"/>
+  <circle cx="91" cy="74" r="5" fill="#17202A" opacity=".74"/>
+</svg>

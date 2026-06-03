@@ -1,0 +1,18 @@
+{
+  "extensionName": {
+    "message": "Bilibili Comment Helper - Tangkap, Salin, Eksport & Cari",
+    "description": "Tajuk Chrome Web Store dan nama sambungan."
+  },
+  "extensionShortName": {
+    "message": "BiliComment",
+    "description": "Nama pendek sambungan."
+  },
+  "extensionDescription": {
+    "message": "Tangkap, cari, salin dan eksport komen video Bilibili sebagai JSON atau Markdown, serta buka analisis AI dengan satu klik.",
+    "description": "Penerangan ringkas sambungan."
+  },
+  "actionTitle": {
+    "message": "Bilibili Comment Export Helper",
+    "description": "Petua butang sambungan."
+  }
+}

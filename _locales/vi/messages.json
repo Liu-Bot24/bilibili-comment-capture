@@ -1,0 +1,18 @@
+{
+  "extensionName": {
+    "message": "Bilibili Comment Helper - Lấy, sao chép, xuất & tìm kiếm",
+    "description": "Tiêu đề Chrome Web Store và tên tiện ích."
+  },
+  "extensionShortName": {
+    "message": "BiliComment",
+    "description": "Tên tiện ích rút gọn."
+  },
+  "extensionDescription": {
+    "message": "Lấy, tìm kiếm, sao chép và xuất bình luận Bilibili dạng JSON hoặc Markdown, kèm phân tích AI một lần nhấp.",
+    "description": "Mô tả ngắn của tiện ích."
+  },
+  "actionTitle": {
+    "message": "Bilibili Comment Export Helper",
+    "description": "Chú giải nút tiện ích."
+  }
+}
