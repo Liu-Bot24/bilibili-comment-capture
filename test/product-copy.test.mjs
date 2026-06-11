@@ -32,7 +32,7 @@ test("README does not describe npm as an extension installation method", () => {
   }
 });
 
-test("README keeps the companion site context without duplicating the unpacked install flow", () => {
+test("README keeps the companion site context and Chrome Web Store install flow", () => {
   const zh = readText("README.md");
   const en = readText("README.en.md");
 
@@ -40,10 +40,12 @@ test("README keeps the companion site context without duplicating the unpacked i
   assert.match(zh, /也可以配合弹幕分析网站/);
   assert.match(zh, /单独作为评论导出工具使用/);
   assert.match(zh, /一键跳到 AI 深度分析页/);
+  assert.match(zh, /从 Chrome Web Store 安装/);
+  assert.match(zh, /chromewebstore\.google\.com\/detail\/bilibili-comment-helper-c\/emfgghgdlmihojemgbgljgibiagiohdj/);
+  assert.match(zh, /从源码加载/);
   assert.equal((zh.match(/加载已解压的扩展程序/g) || []).length, 1);
-  assert.doesNotMatch(zh, /从源码加载/);
   assert.doesNotMatch(zh, /也属于/);
-  assert.doesNotMatch(zh, /Release ZIP|版本号|本项目目录|两者在 Chrome/);
+  assert.doesNotMatch(zh, /Release ZIP|版本号|两者在 Chrome/);
   assert.doesNotMatch(zh, /多分 P|分 P 信息/);
   assert.doesNotMatch(zh, /当前版本|尚未|未正式|未发布|还没有|正在建设|临时使用|暂不|没做完|未完成/);
 
@@ -51,9 +53,11 @@ test("README keeps the companion site context without duplicating the unpacked i
   assert.match(en, /also works with the danmaku analysis site/i);
   assert.match(en, /on its own as a comment export tool/i);
   assert.match(en, /AI deep analysis page/i);
+  assert.match(en, /Install From Chrome Web Store/i);
+  assert.match(en, /chromewebstore\.google\.com\/detail\/bilibili-comment-helper-c\/emfgghgdlmihojemgbgljgibiagiohdj/);
+  assert.match(en, /Load From Source/i);
   assert.equal((en.match(/Load unpacked/g) || []).length, 1);
-  assert.doesNotMatch(en, /Load From Source/i);
-  assert.doesNotMatch(en, /Release ZIP|project folder|During development|extracted .* folder/i);
+  assert.doesNotMatch(en, /Release ZIP|During development|extracted .* folder/i);
   assert.doesNotMatch(en, /multi-part videos|current page information/i);
   assert.doesNotMatch(
     en,

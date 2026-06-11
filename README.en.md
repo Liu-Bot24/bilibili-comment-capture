@@ -27,13 +27,21 @@ You can use it on its own as a comment export tool. If you also use [danmu.liu-q
 
 ## Installation
 
-### Load From A Local Folder
+### Install From Chrome Web Store
+
+The recommended installation method is the Chrome Web Store:
+
+[Install B站评论导出助手](https://chromewebstore.google.com/detail/bilibili-comment-helper-c/emfgghgdlmihojemgbgljgibiagiohdj)
+
+After installation, open a Bilibili video page and use the comment panel on the right side of the page.
+
+### Load From Source
 
 1. Open Chrome or Edge.
 2. Go to `chrome://extensions/`.
 3. Turn on Developer mode.
 4. Click `Load unpacked`.
-5. Select the extension folder that contains `manifest.json`.
+5. Select this project folder.
 
 ## Usage
 
